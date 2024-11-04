@@ -1,19 +1,26 @@
 import requests
 
 def get_trivia_data():
-    url = "https://opentdb.com/api.php?amount=10&difficulty=easy&type=boolean"
-    response = requests.get(url)
+    parameters = {
+        "amount" : 10,
+        "type": "boolean"
+    }
+
+
+    url = "https://opentdb.com/api.php"
+    response = requests.get(url, params=parameters)
     # Check if the request was successful
     if response.status_code == 200:
         # Parse the JSON response into a dictionary
         trivia_data = response.json()
-        return trivia_data
+        data = trivia_data["results"]
+        return data
     else:
         print(f"Failed to retrieve data. Status code: {response.status_code}")
         return None
 
 question_data= get_trivia_data()
-print(question_data)
+# print(question_data)
 
 # question_data = [
 #     {
