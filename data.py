@@ -20,7 +20,7 @@ def get_trivia_data():
         return None
 
 question_data= get_trivia_data()
-print(question_data)
+# print(question_data)
 
 # question_data = [
 #     {
