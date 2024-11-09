@@ -38,7 +38,7 @@ class QuizInterface:
 
         # Run the main loop
         self.window.mainloop()
-
+    # Function to get the next question
     def get_next_question(self):
         q_text = self.quiz.next_question()
         self.canvas.itemconfig(self.question_text, text=q_text)
